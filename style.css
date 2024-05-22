@@ -1,0 +1,556 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(images/galaxy.jpeg);
+  font-family: jura;
+}
+
+button {
+  font-family: jura;
+}
+
+/*---------------------------loader----------------------------------*/
+.loader-con {
+  position: fixed;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  opacity: 0.9;
+  text-align: center;
+  color: #fff;
+  animation: disparaitre 200ms 0.5s forwards;
+}
+
+@keyframes disparaitre {
+  to {
+    transform: scale(0);
+  }
+}
+.loader {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  border-radius: 50%;
+
+  border-top: 5px solid #282825;
+  position: fixed;
+  animation: load 2s linear infinite;
+  background: -webkit-linear-gradient(-90deg, #343332, #7b7978);
+}
+
+.loader::before,
+.loader::after {
+  content: "";
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  box-sizing: border-box;
+  border-radius: 50%;
+}
+
+.loader::before {
+  border-top: 5px solid #000000;
+  transform: rotate(120deg);
+}
+
+.loader::after {
+  border-top: 5px solid #515252;
+  transform: rotate(240deg);
+}
+
+.loader span {
+  font-style: normal;
+  position: absolute;
+  font-size: larger;
+  font-weight: bolder;
+  width: 100px;
+  height: 100px;
+  /**color: #fff;**/
+  color: whitesmoke;
+  text-align: center;
+  line-height: 100px;
+  animation: a2 2s linear infinite;
+}
+
+@keyframes load {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes a2 {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+/* --------------------------DEBUT DE NAV-------------------------- */
+nav {
+  color: white;
+  width: 100%;
+  background-color: black;
+  text-align: center;
+}
+
+h1 {
+  font-size: 1em;
+}
+
+#image-logo {
+  width: 5rem;
+  padding-top: 1em;
+}
+
+ul {
+  padding-inline-start: 0;
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+}
+
+.nav-bar-li {
+  margin: 0.5em;
+}
+
+li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.sticky {
+  position: fixed;
+  z-index: 1000;
+  background-color: black;
+  top: 0;
+  width: 100%;
+}
+
+.navBarFixed {
+  display: flex;
+}
+
+li a:hover {
+  opacity: 0.7;
+  transition: 0.6s;
+}
+
+#restaurants {
+  padding-top: 90px;
+  margin-top: -50px;
+}
+#hotels {
+  padding-top: 70px;
+  margin-top: -70px;
+}
+#sorties {
+  padding-top: 70px;
+  margin-top: -70px;
+}
+
+/*-----------SLIDER NON MOBILE --------------*/
+
+#quote-caroussel {
+  display: none;
+}
+
+/* --------------------------FIN NAV BAR-------------------------- */
+
+/*--------------------------CARDS--------------------------*/
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 3rem 1rem;
+  border-radius: 1.5rem;
+  background-color: #988469;
+  border: 0.15rem solid black;
+  box-shadow: 0.15rem 0.15 rem black;
+  padding: 1rem 0.5rem;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+}
+
+.name-cardelement {
+  margin-bottom: 0.4em;
+  margin-top: 0.4em;
+  font-size: 1.3em;
+  text-align: center;
+}
+
+.dropdown-menu-content {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+
+.invisible {
+  display: none;
+}
+
+.cardelement-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0.5rem;
+}
+
+.cardelement-description {
+  font-size: 1em;
+}
+
+.cardelement-quote {
+  margin-top: 0.4em;
+  font-size: 0.9em;
+  font-style: italic;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.5em;
+}
+
+.dropdown-button {
+  color: white;
+  border-style: none;
+  border-radius: 0.75rem;
+  padding: 0.5rem 1rem;
+  background-color: black;
+  transition: 0.3s ease;
+}
+
+.dropdown-button:hover {
+  transform: scale(1.2);
+}
+
+h2 {
+  font-size: 2em;
+  color: whitesmoke;
+  text-shadow: rgb(198, 196, 196) 2px 1px;
+  text-align: center;
+  font-size: 3em;
+}
+
+/**--------------------------FIN CARDS--------------------------**/
+
+/**MOSAIQUE de PHOTOS en GRID**/
+.titreMosaique {
+  text-align: center;
+  margin-top: 1em;
+  margin-bottom: 0.4em;
+  font-size: xx-large;
+}
+
+.mosaique {
+  display: grid;
+  grid-column-gap: 0.5em;
+  grid-row-gap: 0.5em;
+  margin-bottom: 1em;
+}
+
+.img1 {
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+.img2 {
+  grid-area: 2 / 1 / 4 / 3;
+}
+
+.img3 {
+  grid-area: 1 / 3 / 3 / 4;
+}
+
+.img4 {
+  grid-area: 1 / 2 / 2 / 3;
+}
+
+.img5 {
+  grid-area: 3 / 3 / 4 / 4;
+}
+
+.mosaique img {
+  width: 100%;
+  height: 100%;
+}
+
+/** bouton commentaire **/
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  font-size: 20px;
+  font-weight: bolder;
+  color: #fff;
+  background-color: #70695f;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 50px;
+}
+
+.btn-cmnt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5em;
+}
+
+/** FIN bouton commentaire **/
+
+/** DEBUT du Footer **/
+
+.logofooter {
+  width: 2em;
+  margin-left: 0.3em;
+}
+
+.lunefooter {
+  margin-top: 7%;
+  width: 6em;
+  height: 6em;
+}
+
+footer {
+  background-color: rgb(49, 49, 49);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 10em;
+  color: rgb(231, 222, 222);
+}
+
+.contact {
+  font-size: 10px;
+  margin-top: 3em;
+}
+
+.contact p {
+  margin-bottom: 0.5em;
+}
+
+.developpeurs {
+  margin-top: 1.5em;
+  font-size: 10px;
+  margin-right: 2em;
+  flex-direction: column;
+}
+
+.developpeurs h3 {
+  text-align: center;
+  margin-top: 1em;
+}
+
+#idev {
+  flex-direction: column;
+  text-align: left;
+}
+
+/** FIN du Footer **/
+
+/* POP UP AVIS */
+.popupBackground {
+  display: none;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.formulaire {
+  position: fixed;
+  top: 20%;
+  left: -3%;
+  /*modifié dans le media queries*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 3rem 1rem;
+  border-radius: 1.5rem;
+  background-color: #988469;
+  border: 0.15rem solid black;
+  padding: 1rem 0.5rem;
+}
+
+.active {
+  display: flex;
+  top: 0%;
+  left: 0%;
+  height: 200%;
+  background-color: rgba(83, 82, 82, 0.9);
+}
+.logoFormulaire {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2em;
+}
+
+.fullName {
+  display: flex;
+  flex-direction: column;
+}
+
+.fullEmail {
+  display: flex;
+  flex-direction: column;
+}
+
+.allComment {
+  margin-left: 10%;
+}
+
+.btnEnvoyer {
+  margin-left: 30%;
+  width: 5em;
+  margin-top: 5%;
+}
+
+#name {
+  width: 17em;
+}
+
+#email {
+  width: 17em;
+}
+/* .messageOk {
+  display: none;
+} */
+.close {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 6%;
+  justify-content: center;
+  border-radius: 5px;
+  margin-left: 23em;
+}
+.close:hover {
+  opacity: 0.7;
+  transform: 1s;
+}
+/* DEBUT RESPONSIVE */
+
+@media screen and (min-width: 992px) {
+  /* -----------------FORMULAIRE RESPONSIVE ---------------*/
+  .formulaire {
+    left: 42%;
+  }
+
+  /* --------------------------nav bar responsive-------------------------- */
+  .nav-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  h1 {
+    font-size: 1.8em;
+  }
+
+  #image-logo {
+    padding: 1em;
+    width: 12%;
+  }
+
+  #slide {
+    margin-top: 2em;
+  }
+
+  /* --------------------------fin nav bar-------------------------- */
+
+  /** CAROUSEL**/
+
+  #quote-caroussel {
+    color: white;
+    font-size: 1.5em;
+    display: flex;
+    justify-content: center;
+  }
+  /** FIN CAROUSEL **/
+
+  /* --------------------------cards-------------------------- */
+  .restaurant-cards {
+    display: flex;
+    justify-content: center;
+  }
+
+  .hotel-cards {
+    display: flex;
+    justify-content: center;
+  }
+
+  .activity-cards {
+    display: flex;
+    justify-content: center;
+  }
+
+  .card-container:hover {
+    box-shadow: 0.4em 0.4em black;
+    transition: box-shadow 0.3s;
+  }
+
+  .card-container {
+    width: 100%;
+  }
+
+  .cardelement-description {
+    font-size: 100%;
+  }
+
+  .cardelement-quote {
+    font-size: 1.1em;
+  }
+  /* --------------------------fin cards-------------------------- */
+
+  /* --------------------------bouton commentaire-------------------------- */
+  .btn {
+    font-size: 25px;
+  }
+
+  /* --------------------------début MOSAIQUE NONE-------------------------- */
+  .titreMosaique {
+    display: none;
+  }
+
+  .mosaique {
+    display: none;
+  }
+
+  /* --------------------------fin MOSAIQUE NONE-------------------------- */
+
+  /* -----------------------FOOTER ----------------------------------------*/
+  footer {
+    height: 11em;
+  }
+  .contact {
+    margin-top: 1em;
+    margin-left: -40%;
+    font-size: 1em;
+  }
+  .developpeurs {
+    margin-top: -0.5em;
+    font-size: 1em;
+  }
+  .lunefooter {
+    margin-left: 1em;
+    margin-top: 1em;
+  }
+}
